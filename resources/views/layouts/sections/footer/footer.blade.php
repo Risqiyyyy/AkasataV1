@@ -6,7 +6,7 @@
         document.write(new Date().getFullYear())
 
       </script>
-      , made with Medikacom
+      , made with AkasataV1
     </div>
   </div>
 </footer>

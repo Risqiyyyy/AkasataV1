@@ -12,14 +12,20 @@
     {
       "url": "/chart",
       "name": "Chart",
-      "icon": "menu-icon tf-icons bx bxs-user-account",
+      "icon": "menu-icon tf-icons bx bx-bar-chart",
       "slug": "chart"
     },
     {
       "url": "/cases",
       "name": "Cases",
-      "icon": "menu-icon tf-icons bx bxs-user-account",
+      "icon": "menu-icon tf-icons bx bxs-briefcase",
       "slug": "cases"
+    },
+    {
+      "url": "/events",
+      "name": "Events",
+      "icon": "menu-icon tf-icons bx bxs-calendar-event",
+      "slug": "events.index"
     }
   ]
 }
