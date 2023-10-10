@@ -41,9 +41,10 @@ class EventsController extends Controller
         return redirect()->route('events.index')->with(['success' => 'Data Berhasil Disimpan!']);
     }
 
-    public function destroy(Events $events)
+    public function delete(Events $id)
     {
-      $events = delete();
+      Storage::delete('public/image/'. $id->image);
+      $id->delete();
       return redirect()->route('events.index')->with('success','Event has been deleted successfully');
     }
 }
