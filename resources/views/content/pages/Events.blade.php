@@ -120,7 +120,7 @@
                 <a class="dropdown-item" href="javascript:void(0);" type="button" data-bs-toggle="modal" data-bs-target="#detailmodal"
                 data-bs-whatever="@mdo"><i class="bx bxs-bullseye me-1"></i> Detail</a>
                 <a class="dropdown-item" href="javascript:void(0);"><i class="bx bxs-edit-alt me-1"></i> Edit</a>
-                <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i> Delete</a>
+                <a class="dropdown-item" href="{{ route('events.delete', $e->id) }}"><i class="bx bx-trash me-1"></i> Delete</a>
               </div>
             </div>
             <div style="width: 18rem;">

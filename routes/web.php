@@ -30,6 +30,8 @@ Route::get('/chart', $controller_path . '\pages\ChartController@index')->name('c
 Route::get('/cases', $controller_path . '\pages\CasesController@index')->name('cases');
 Route::get('/events', $controller_path . '\pages\EventsController@index')->name('events.index');
 Route::post('/events', $controller_path . '\pages\EventsController@store')->name('events.store');
+Route::delete('/events/{id}', $controller_path . '\pages\EventsController@destroy')->name('events.delete');
+
 // authentication
 Route::get('/auth/login-basic', $controller_path . '\authentications\LoginBasic@index')->name('auth-login-basic');
 Route::get('/auth/register-basic', $controller_path . '\authentications\RegisterBasic@index')->name('auth-register-basic');

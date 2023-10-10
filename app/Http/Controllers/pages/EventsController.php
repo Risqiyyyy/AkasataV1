@@ -5,6 +5,7 @@ namespace App\Http\Controllers\pages;
 use App\Http\Controllers\Controller;
 use App\Models\Events;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class EventsController extends Controller
 {
@@ -38,5 +39,11 @@ class EventsController extends Controller
         // return redirect()->back();
         // dd($e);
         return redirect()->route('events.index')->with(['success' => 'Data Berhasil Disimpan!']);
+    }
+
+    public function destroy(Events $events)
+    {
+      $events = delete();
+      return redirect()->route('events.index')->with('success','Event has been deleted successfully');
     }
 }
