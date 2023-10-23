@@ -26,6 +26,12 @@
       "name": "Events",
       "icon": "menu-icon tf-icons bx bxs-calendar-event",
       "slug": "events.index"
+    },
+    {
+      "url": "/endpoint",
+      "name": "Endpoint",
+      "icon": "menu-icon tf-icons bx bx-laptop",
+      "slug": "endpoint.index"
     }
   ]
 }

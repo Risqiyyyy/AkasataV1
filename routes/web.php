@@ -31,6 +31,9 @@ Route::get('/cases', $controller_path . '\pages\CasesController@index')->name('c
 Route::get('/events', $controller_path . '\pages\EventsController@index')->name('events.index');
 Route::post('/events', $controller_path . '\pages\EventsController@store')->name('events.store');
 Route::delete('/events/{id}', $controller_path . '\pages\EventsController@delete')->name('events.delete');
+Route::get('/endpoint', $controller_path . '\pages\EndpointController@index')->name('endpoint.index');
+Route::post('/endpoint', $controller_path . '\pages\EndpointController@store')->name('endpoint.store');
+Route::delete('/endpoint/{id}', $controller_path . '\pages\EndpointController@delete')->name('endpoint.delete');
 
 // authentication
 Route::get('/auth/login-basic', $controller_path . '\authentications\LoginBasic@index')->name('auth-login-basic');
