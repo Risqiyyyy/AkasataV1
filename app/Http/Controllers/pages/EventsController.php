@@ -11,16 +11,16 @@ class EventsController extends Controller
 {
   public function index()
   {
-    $events = Events::all();
-    // dd($events);
+    $events = Events::search(request('search'))->paginate(10);;
     return view('content.pages.events', compact('events'));
   }
 
   public function store(Request $request)
     {
-        // $this->validate($request, [
-        //   'img' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
-        // ]);
+        $this->validate($request, [
+          'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+        ]);
+        
         $imageName = time().'.'.$request->image->getClientOriginalExtension();
         $request->image->move(public_path('/image'), $imageName);
 
@@ -35,9 +35,6 @@ class EventsController extends Controller
           'date_time' => $request->date_time,
           'deskripsi' => $request->deskripsi
         ]);
-
-        // return redirect()->back();
-        // dd($e);
         return redirect()->route('events.index')->with(['success' => 'Data Berhasil Disimpan!']);
     }
 

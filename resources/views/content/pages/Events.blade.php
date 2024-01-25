@@ -21,6 +21,16 @@
     <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal"
       data-bs-whatever="@mdo">Create Events +</button>
   </div>
+   <!-- Search -->
+   <form action="{{ route('events.index') }}" method="get">
+    <div class="navbar-nav align-items-center mb-3">
+      <div class="nav-item d-flex align-items-center">
+        <button><i class="bx bx-search fs-4 lh-0"></i></button>
+        <input type="text" class="form-control border-0 shadow-none" name="search" placeholder="Search..." aria-label="Search...">
+      </div>
+    </div>
+  </form>
+    <!-- /Search -->
 
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
