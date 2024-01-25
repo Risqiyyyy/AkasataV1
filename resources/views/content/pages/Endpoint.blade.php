@@ -1,6 +1,6 @@
 @extends('layouts/contentNavbarLayout')
 
-@section('title', 'Chart')
+@section('title', 'Endpoint')
 
 @section('vendor-style')
 <link rel="stylesheet" href="{{asset('assets/vendor/libs/apex-charts/apex-charts.css')}}">
@@ -55,7 +55,16 @@
       </div>
     </div>
     {{-- end modal --}}
-  
+          <!-- Search -->
+          <form action="{{ route('endpoint.index') }}" method="get">
+          <div class="navbar-nav align-items-center mb-3">
+            <div class="nav-item d-flex align-items-center">
+              <button><i class="bx bx-search fs-4 lh-0"></i></button>
+              <input type="text" class="form-control border-0 shadow-none" name="search" placeholder="Search..." aria-label="Search...">
+            </div>
+          </div>
+        </form>
+          <!-- /Search -->
     <div class="card">
       <div class="table-responsive text-nowrap">
         <table class="table">

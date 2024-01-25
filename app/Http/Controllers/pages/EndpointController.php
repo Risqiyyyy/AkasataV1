@@ -9,7 +9,7 @@ class EndpointController extends Controller
 {
   public function index()
   {
-    $endpoint = Endpoint::all();
+    $endpoint = Endpoint::search(request('search'))->paginate(10);;
     return view('content.pages.endpoint',compact('endpoint'));
   }
 

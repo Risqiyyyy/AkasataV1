@@ -34,6 +34,7 @@ Route::delete('/events/{id}', $controller_path . '\pages\EventsController@delete
 Route::get('/endpoint', $controller_path . '\pages\EndpointController@index')->name('endpoint.index');
 Route::post('/endpoint', $controller_path . '\pages\EndpointController@store')->name('endpoint.store');
 Route::delete('/endpoint/{id}', $controller_path . '\pages\EndpointController@delete')->name('endpoint.delete');
+Route::get('/workbench', $controller_path . '\pages\WorkbenchController@index')->name('workbench.index');
 
 // authentication
 Route::get('/auth/login-basic', $controller_path . '\authentications\LoginBasic@index')->name('auth-login-basic');

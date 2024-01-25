@@ -32,6 +32,12 @@
       "name": "Endpoint",
       "icon": "menu-icon tf-icons bx bx-laptop",
       "slug": "endpoint.index"
+    },
+    {
+      "url": "/workbench",
+      "name": "Workbench",
+      "icon": "menu-icon tf-icons bx bx-network-chart",
+      "slug": "workbench.index"
     }
   ]
 }
