@@ -15,12 +15,9 @@ class EndpointController extends Controller
 
   public function store(Request $request)
     {
-        Endpoint::create([
-          'hostname' => $request->hostname,
-          'regional' => $request->regional,
-          'ip' => $request->ip
-        ]);
 
+      $request->validate(Endpoint::$rules);
+        Endpoint::create($request->all());
         return redirect()->route('endpoint.index')->with(['success' => 'Data Berhasil Disimpan!']);
     }
 

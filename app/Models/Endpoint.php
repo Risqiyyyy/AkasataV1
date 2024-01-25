@@ -28,4 +28,9 @@ class Endpoint extends Model
             'ip'     => $this->ip,
         ];
     }
+
+    public static $rules = [
+        'hostname' => 'required|unique:endpoints,hostname',
+        'ip' => 'required|unique:endpoints,ip',
+    ];
 }
