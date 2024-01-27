@@ -24,10 +24,11 @@
             </a>
           </div>
           <!-- /Logo -->
-          <form id="formAuthentication" class="mb-3" action="{{url('/')}}" method="GET">
+          <form id="formAuthentication" class="mb-3" action="{{ route('register.store')}}" method="POST">
+            @csrf
             <div class="mb-3">
               <label for="username" class="form-label">Nama Lengkap</label>
-              <input type="text" class="form-control" name="nama_lengkap" placeholder="Enter your username" autofocus>
+              <input type="text" class="form-control" name="name" placeholder="Enter your username" autofocus>
             </div>
             <div class="mb-3">
               <label for="email" class="form-label">Email</label>
@@ -51,7 +52,7 @@
               </div>
             </div>
             <button class="btn btn-primary d-grid w-100">
-              Sign up
+              {{ __('Register') }}
             </button>
           </form>
 

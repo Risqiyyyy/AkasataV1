@@ -27,6 +27,10 @@ Route::get('/layouts/blank', $controller_path . '\layouts\Blank@index')->name('l
 
 // pages
 Route::get('/chart', $controller_path . '\pages\ChartController@index')->name('chart');
+Route::post('/chart',$controller_path . '\pages\ChartController@store')->name('chart.store');
+Route::get('/getLastData',$controller_path . '\pages\ChartController@getLastData')->name('getLastData');
+Route::get('/getchart',$controller_path . '\pages\ChartController@getchart')->name('getchart');
+
 Route::get('/cases', $controller_path . '\pages\CasesController@index')->name('cases');
 Route::get('/events', $controller_path . '\pages\EventsController@index')->name('events.index');
 Route::post('/events', $controller_path . '\pages\EventsController@store')->name('events.store');
@@ -39,4 +43,8 @@ Route::get('/ipfilter', $controller_path . '\pages\IpFilterController@index')->n
 
 // authentication
 Route::get('/auth/login-basic', $controller_path . '\authentications\LoginBasic@index')->name('auth-login-basic');
+
 Route::get('/auth/register-basic', $controller_path . '\authentications\RegisterBasic@index')->name('auth-register-basic');
+Route::post('/auth/register-basic', $controller_path . '\authentications\RegisterBasic@store')->name('register.store');
+
+//json upload
