@@ -8,7 +8,7 @@
 <body >
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
-    <div id="sankey_chart" onload="window.print()"></div>
+    <div id="sankey_chart"></div>
       <script type="text/javascript">
       function drawSankeyChart(data) {
         let flows = {}; 
@@ -62,8 +62,9 @@
               // Instantiate and draw the chart
               var chart = new google.visualization.Sankey(document.getElementById('sankey_chart'));
               chart.draw(data, options);
+              window.print();
           });
-          window.print();
+
       }
 
           fetch('/getLastData')

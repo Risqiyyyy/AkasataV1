@@ -26,10 +26,15 @@ Route::get('/layouts/container', $controller_path . '\layouts\Container@index')-
 Route::get('/layouts/blank', $controller_path . '\layouts\Blank@index')->name('layouts-blank');
 
 // pages
+
+// chart
 Route::get('/chart', $controller_path . '\pages\ChartController@index')->name('chart');
 Route::post('/chart',$controller_path . '\pages\ChartController@store')->name('chart.store');
 Route::get('/getLastData',$controller_path . '\pages\ChartController@getLastData')->name('getLastData');
 Route::get('/getchart',$controller_path . '\pages\ChartController@getchart')->name('getchart');
+Route::get('/ipfilter', $controller_path . '\pages\IpFilterController@index')->name('ipfilter.index');
+Route::get('/rdp', $controller_path . '\pages\RdpChartController@index')->name('rdp.index');
+Route::post('/rdp', $controller_path . '\pages\RdpChartController@store')->name('rdp.store');
 
 Route::get('/cases', $controller_path . '\pages\CasesController@index')->name('cases');
 Route::get('/events', $controller_path . '\pages\EventsController@index')->name('events.index');
@@ -39,7 +44,7 @@ Route::get('/endpoint', $controller_path . '\pages\EndpointController@index')->n
 Route::post('/endpoint', $controller_path . '\pages\EndpointController@store')->name('endpoint.store');
 Route::delete('/endpoint/{id}', $controller_path . '\pages\EndpointController@delete')->name('endpoint.delete');
 Route::get('/workbench', $controller_path . '\pages\WorkbenchController@index')->name('workbench.index');
-Route::get('/ipfilter', $controller_path . '\pages\IpFilterController@index')->name('ipfilter.index');
+
 
 // authentication
 Route::get('/auth/login-basic', $controller_path . '\authentications\LoginBasic@index')->name('auth-login-basic');

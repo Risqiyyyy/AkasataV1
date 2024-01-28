@@ -16,7 +16,7 @@ class ChartController extends Controller
   public function store(Request $request)
     {
       $request->validate([
-        'json_file' => 'required|mimetypes:application/json|max:2048', // Sesuaikan dengan kebutuhan
+        'json_file' => 'required|mimetypes:application/json|max:2048',
     ]);
 
         $jsonContent = file_get_contents($request->file('json_file')->path());

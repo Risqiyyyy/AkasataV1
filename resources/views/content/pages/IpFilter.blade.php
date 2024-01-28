@@ -18,7 +18,8 @@
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <div class="row">
   <div class="d-grid gap-2 d-md-block">
-    <a href="{{ route('chart') }}"><button type="button" class="btn btn-primary mb-3">Chart</button></a>
+    <a href="{{ route('chart') }}"><button type="button" class="btn btn-primary mb-3">SSH</button></a>
+    <a href="{{ route('rdp.index') }}"><button type="button" class="btn btn-primary mb-3">RDP</button></a>
     <a href="{{ route('ipfilter.index') }}"><button type="button" class="btn btn-primary mb-3">IP Filter</button></a>
   </div>
 
