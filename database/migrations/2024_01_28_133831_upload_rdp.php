@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         
-        Schema::create('uploadRdps', function (Blueprint $table) {
+        Schema::create('upload_rdps', function (Blueprint $table) {
             $table->id();
             $table->json('json_rdp');
             $table->timestamps();

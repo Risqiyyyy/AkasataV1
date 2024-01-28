@@ -78,43 +78,49 @@
     </div>
   </form>
   <!-- /Search -->
-  <div class="card">
-    <div class="table-responsive text-nowrap">
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Hostname</th>
-            <th>Regional</th>
-            <th>IP</th>
-          </tr>
-        </thead>
-        <tbody class="table-border-bottom-0">
-          @foreach ($endpoint as $e)
-          <tr>
-            <td>{{ $e->hostname }}</td>
-            <td>{{ $e->regional }}</td>
-            <td>{{ $e->ip }}</td>
-            <td>
-              <div class="dropdown">
-                <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i
-                    class="bx bx-dots-vertical-rounded"></i></button>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="javascript:void(0);"><i class="bx bxs-bullseye me-1"></i> Detail</a>
-                  <a class="dropdown-item" href="javascript:void(0);"><i class="bx bxs-edit-alt me-1"></i> Edit</a>
-                  <form action="{{ route('endpoint.delete', $e->id) }}" method="POST">
-                    @csrf
-                    @method('delete')
-                    <button type="submit" class="dropdown-item"><i class="bx bx-trash me-1"></i> Delete</button>
-                  </form>
+  <div class="container">
+    <div class="card mb-3">
+      <div class="table-responsive text-wrap">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Hostname</th>
+              <th>Regional</th>
+              <th>IP</th>
+            </tr>
+          </thead>
+          <tbody class="table-border-bottom-0">
+            @foreach ($endpoint as $e)
+            <tr>
+              <td>{{ $e->hostname }}</td>
+              <td>{{ $e->regional }}</td>
+              <td>{{ $e->ip }}</td>
+              <td>
+                <div class="dropdown">
+                  <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i
+                      class="bx bx-dots-vertical-rounded"></i></button>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="javascript:void(0);"><i class="bx bxs-bullseye me-1"></i> Detail</a>
+                    <a class="dropdown-item" href="javascript:void(0);"><i class="bx bxs-edit-alt me-1"></i> Edit</a>
+                    <form action="{{ route('endpoint.delete', $e->id) }}" method="POST">
+                      @csrf
+                      @method('delete')
+                      <button type="submit" class="dropdown-item"><i class="bx bx-trash me-1"></i> Delete</button>
+                    </form>
+                  </div>
                 </div>
-              </div>
-            </td>
-          </tr>
-          @endforeach
-        </tbody>
-      </table>
+              </td>
+            </tr>
+            @endforeach
+          </tbody>
+        </table>
+        <hr>
+        <div class="pagination-center px-3">{{ $endpoint->links('pagination::bootstrap-5') }}</div>
+      </div>
     </div>
   </div>
+
+
 </div>
 <script>
   var myModal = document.getElementById('myModal')

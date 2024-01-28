@@ -29,7 +29,9 @@
         <button type="submit" class="btn btn-secondary ">Upload</button>
       </div>
     </form>
-    <a href="{{ route('getchart') }}"><button type="button" class="btn btn-primary mb-3">print</button></a>
+    <div class="d-grid gap-2 d-md-block">
+      <a href="{{ route('getchart') }}"><button type="button" class="btn btn-primary mb-3">print</button></a>
+    </div>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
     <div id="sankey_chart"></div>

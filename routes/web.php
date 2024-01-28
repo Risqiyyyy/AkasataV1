@@ -35,6 +35,8 @@ Route::get('/getchart',$controller_path . '\pages\ChartController@getchart')->na
 Route::get('/ipfilter', $controller_path . '\pages\IpFilterController@index')->name('ipfilter.index');
 Route::get('/rdp', $controller_path . '\pages\RdpChartController@index')->name('rdp.index');
 Route::post('/rdp', $controller_path . '\pages\RdpChartController@store')->name('rdp.store');
+Route::get('/getLastDatardp', $controller_path . '\pages\RdpChartController@getLastDatardp')->name('getLastDatardp');
+Route::get('/getprintrdp',$controller_path . '\pages\RdpChartController@getprintrdp')->name('getprintrdp');
 
 Route::get('/cases', $controller_path . '\pages\CasesController@index')->name('cases');
 Route::get('/events', $controller_path . '\pages\EventsController@index')->name('events.index');

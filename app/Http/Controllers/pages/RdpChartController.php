@@ -22,10 +22,10 @@ class RdpChartController extends Controller
         $jsonContent = file_get_contents($request->file('json_rdp')->path());
         $upload = UploadRdp::create(['json_rdp' => $jsonContent]); 
 
-        return redirect()->route('rdp')->with('success', 'File berhasil diupload!');
+        return redirect()->route('rdp.index')->with('success', 'File berhasil diupload!');
     }
 
-    public function getLastData()
+    public function getLastDatardp()
     {
         $lastUpload = UploadRdp::latest()->first();
           if ($lastUpload) {
@@ -37,5 +37,9 @@ class RdpChartController extends Controller
           } else {
             return response()->json(['message' => 'Tidak ada data.']);
           }
+    }
+
+    public function getprintrdp(){
+      return view('content.pages.ssh');
     }
 }

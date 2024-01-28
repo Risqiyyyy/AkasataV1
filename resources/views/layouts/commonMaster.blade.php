@@ -18,6 +18,7 @@
 
   <!-- Include Styles -->
   @include('layouts/sections/styles')
+  
 
   <!-- Include Scripts for customizer, helper, analytics, config -->
   @include('layouts/sections/scriptsIncludes')
