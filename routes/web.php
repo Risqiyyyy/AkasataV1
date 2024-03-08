@@ -15,8 +15,10 @@ use Illuminate\Support\Facades\Route;
 $controller_path = 'App\Http\Controllers';
 
 // Main Page Route
-Route::get('/Dashboard', $controller_path . '\dashboard\Analytics@index')->name('dashboard-analytics');
-Route::get('/', $controller_path . '\authentications\LoginBasic@index')->name('Login');
+
+Route::get('/', $controller_path . '\authentications\LoginBasic@index')->name('Login.index');
+Route::post('/Login', $controller_path . '\authentications\LoginBasic@login')->name('Login.auth');
+Route::post('/Logout', $controller_path . '\authentications\LoginBasic@logout')->name('Logout');
 
 // layout
 Route::get('/layouts/without-menu', $controller_path . '\layouts\WithoutMenu@index')->name('layouts-without-menu');
@@ -55,3 +57,8 @@ Route::get('/auth/register-basic', $controller_path . '\authentications\Register
 Route::post('/auth/register-basic', $controller_path . '\authentications\RegisterBasic@store')->name('register.store');
 
 //json upload
+
+Route::middleware(['auth', 'role:admin'])->group(function () {
+    $controller_path = 'App\Http\Controllers';
+    Route::get('/Dashboard', $controller_path . '\dashboard\Analytics@index')->name('dashboard-analytics');
+});
