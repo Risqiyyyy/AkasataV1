@@ -16,10 +16,10 @@
       "slug": "chart"
     },
     {
-      "url": "/cases",
-      "name": "Cases",
+      "url": "/vtotal",
+      "name": "Virus Total",
       "icon": "menu-icon tf-icons bx bxs-briefcase",
-      "slug": "cases"
+      "slug": "vtotalvtotal"
     },
     {
       "url": "/events",

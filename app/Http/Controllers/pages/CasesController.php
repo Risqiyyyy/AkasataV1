@@ -8,6 +8,6 @@ class CasesController extends Controller
 {
   public function index()
   {
-    return view('content.pages.cases');
+    return view('content.pages.chart');
   }
 }

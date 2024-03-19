@@ -62,3 +62,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     $controller_path = 'App\Http\Controllers';
     Route::get('/Dashboard', $controller_path . '\dashboard\Analytics@index')->name('dashboard-analytics');
 });
+
+// vtotal
+Route::get('/vtotal', $controller_path . '\pages\VirusTotalController@index')->name('vtotal');
+Route::post('/vtotal', $controller_path . '\pages\VirusTotalController@iphash')->name('vtotal.iphash');

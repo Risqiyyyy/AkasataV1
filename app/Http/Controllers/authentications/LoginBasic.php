@@ -24,7 +24,7 @@ class LoginBasic extends Controller
             return redirect()->intended('/Dashboard');
         }
 
-        return redirect()->route('Login.auth')->with('error', 'Invalid credentials.');
+        return redirect()->route('Login.index')->with('error', 'Invalid credentials.');
     }
 
     public function logout(Request $request)
